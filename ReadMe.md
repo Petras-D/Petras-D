@@ -27,7 +27,7 @@ Hello. My name is Piotr DUDA and I am a software tester who is taking his first 
 - SELENIUM
 - JENKIS
 - CUCUMBER
-- Prosze przetłumaczyć (chce ulepszyć sie w technologiach powyżej XDD)
+
 
 ## Tech skills in basics:
 - Software testing
