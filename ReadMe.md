@@ -35,4 +35,8 @@ Hello. My name is Piotr DUDA and I am a software tester who is taking his first 
 - Reporting bugs
 - Using MS Office
 
+## Recommended blogs
+- testerzy.pl
+- testuj.pl - Test, Bugs & Rock'n'Roll
+
 ## My Test case Example
