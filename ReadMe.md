@@ -42,3 +42,8 @@ Hello. My name is Piotr DUDA and I am a software tester who is taking his first 
 - testuj.pl - Test, Bugs & Rock'n'Roll
 
 ## My Test case Example
+https://github.com/Petras-D/Petras-D/blob/main/test%20case%20example.png
+
+## My Bug Report Example
+https://github.com/Petras-D/Petras-D/blob/main/bug%20report.png
+https://github.com/Petras-D/Petras-D/blob/main/Bug%20video.mp4
