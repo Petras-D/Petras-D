@@ -20,8 +20,8 @@ Hello. My name is Piotr DUDA and I am a software tester who is taking his first 
 - SHAREX
 - BANDICAM
 - BUGMAGNET
-- JAVA
-- HTML
+- JAVA(fundamentals)
+
 
 ## I want to learn
 - POSTMAN
