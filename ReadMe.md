@@ -28,7 +28,6 @@ Hello. My name is Piotr DUDA and I am a software tester who is taking his first 
 - SELENIUM
 - JENKIS
 - CUCUMBER
-- I would like to improv in programs I listed above
 
 
 ## Tech skills in basics:
