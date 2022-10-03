@@ -1,0 +1,259 @@
+package org.example;
+
+
+
+import com.beust.ah.A;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+import javax.swing.*;
+import java.io.File;
+import java.util.List;
+
+public class Tables/drag/Dowloand/Alerts/SlidersWithSelenium {
+
+    @Test
+    public void TableWithPaginationExample() {
+        WebDriverManager.chromedriver().setup();
+        ChromeDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/table-pagination-demo.html");
+        WebElement NextLink = chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/ul/li[5]/a"));
+        WebElement SecondPage = chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/ul/li[3]/a"));
+        WebElement ThirdPage = chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/ul/li[4]/a"));
+        WebElement Firstpage = chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/ul/li[2]/a"));
+        WebElement PrevLink = chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/ul/li[1]/a"));
+        SecondPage.click();
+        ThirdPage.click();
+        Firstpage.click();
+        NextLink.click();
+        NextLink.click();
+        PrevLink.click();
+
+
+    }
+
+    @Test
+    public void TypeinyoursearchtofilterdatabyTasksAssigneeStatus() {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/table-search-filter-demo.html");
+        WebElement Tasks = chrome.findElement(By.id("task-table-filter"));
+        Tasks.sendKeys("Wireframes");
+
+        Tasks.clear();
+        Tasks.sendKeys("Mike Trout");
+
+        Tasks.clear();
+        Tasks.sendKeys("in progress");
+
+
+    }
+
+    @Test
+    public void Clickthefiltericontoactivatecolumnfilters() {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/table-search-filter-demo.html");
+        WebElement Filter = chrome.findElement(By.xpath("//button[@class='btn btn-default btn-xs btn-filter']"));
+        Filter.click();
+        WebElement Number = chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div/table/thead/tr/th[1]/input"));
+        WebElement Username = chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div/table/thead/tr/th[2]/input"));
+        WebElement FirstName = chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div/table/thead/tr/th[3]/input"));
+        WebElement LastName = chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div/table/thead/tr/th[4]/input"));
+        Number.sendKeys("2");
+        Username.sendKeys("sd");
+        FirstName.sendKeys("sdsd");
+        LastName.sendKeys("sdssdsda");
+
+    }
+
+    @Test
+
+    public void TableSortAndSearchDemo() {
+
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/table-sort-search-demo.html");
+
+        WebElement Selector = chrome.findElement(By.name("example_length"));
+        WebElement Search = chrome.findElement(By.tagName("input"));
+        WebElement NextButton = chrome.findElement(By.id("example_next"));
+        WebElement PreviousBytton = chrome.findElement(By.id("example_previous"));
+        Search.sendKeys(" A");
+        Select Select = new Select(Selector);
+        Select.selectByVisibleText("25");
+        NextButton.click();
+        NextButton.click();
+        PreviousBytton.click();
+
+
+    }
+
+    @Test
+    public void JQueryUIProgressbar() throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/jquery-download-progress-bar-demo.html");
+
+        WebElement StartDowloand = chrome.findElement(By.id("downloadButton"));
+        StartDowloand.click();
+        Thread.sleep(400);
+        WebElement CancelDowloand = chrome.findElement(By.xpath("/html/body/div[3]/div[3]/div/button"));
+        CancelDowloand.click();
+        StartDowloand.click();
+        Thread.sleep(15000);
+        WebElement CloseButon = chrome.findElement(By.xpath("/html/body/div[3]/div[3]/div/button"));
+        CloseButon.click();
+    }
+
+    @Test
+    public void Sliders() {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/drag-drop-range-sliders-demo.html");
+
+        WebElement slider = chrome.findElement(By.name("range"));
+
+        System.out.println(slider.getAttribute("value"));
+        int valueOfSlider=Integer.valueOf(slider.getAttribute("value"));
+        for(int i=valueOfSlider;i<60;i++)
+        {
+            slider.sendKeys((Keys.ARROW_RIGHT));
+        }
+    }
+    @Test
+    public void alert() throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/window-popup-modal-demo.html");
+        WebElement FollowOnTwitter= chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[1]/div/div[2]/div[1]/a"));
+        FollowOnTwitter.click();
+        chrome.switchTo().alert().accept();
+
+
+    }
+    @Test
+    public  void alertJavaSrcipt (){
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/javascript-alert-box-demo.html");
+        WebElement JavaScriptAlertBoxClickMe = chrome.findElement(By.xpath("//button[@class='btn btn-default']"));
+        JavaScriptAlertBoxClickMe.click();
+        chrome.switchTo().alert().accept();
+
+    }
+
+    @Test
+    public  void alertJavaSrciptConfirm () {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/javascript-alert-box-demo.html");
+WebElement JavaScriptConfirmBox=chrome.findElement(By.xpath("//button[@class='btn btn-default btn-lg']"));
+        JavaScriptConfirmBox.click();
+        chrome.switchTo().alert().dismiss();
+        }
+    @Test
+    public  void alertJavaSrciptAlertBox () throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/javascript-alert-box-demo.html");
+        WebElement JavaScriptAlertBox=chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[3]/div[2]/button"));
+        JavaScriptAlertBox.click();
+        chrome.switchTo().alert().sendKeys("sd");
+        Thread.sleep(500);
+       chrome.switchTo().alert().accept();
+    }
+
+    @Test
+    public  void FileDownloadDemoforAutomation () throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/generate-file-to-download-demo.html");
+        WebElement TextBox=chrome.findElement(By.id("textbox"));
+
+        TextBox.sendKeys("asda");
+        WebElement create= chrome.findElement(By.id("create"));
+        create.click();
+
+        WebElement Dowloand =chrome.findElement(By.id("link-to-download"));
+        Dowloand.click();
+        Thread.sleep(4000);
+        File file =new File("\"C:\\Users\\piotr\\Downloads\\easyinfo (1).txt\"");
+                if(file.exists())
+                {
+                    file.delete();
+                } else  {
+                    System.out.println(file+" doesn't exist " +file.getAbsolutePath());
+
+                }
+    }
+
+    @Test
+    public  void mFileDownloadDemoforAutomation () {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/bootstrap-dual-list-box-demo.html");
+        WebElement firstcolumn=chrome.findElement(By.xpath("//ul [@class='list-group']"));
+        List<WebElement> Firstykolumn =chrome.findElements(By.xpath("//li [@class='list-group-item']"));
+        String a="bootstrap-duallist";
+       for (WebElement list:Firstykolumn)
+        {
+
+            if(list.getText().equals("bootstrap-duallist")) {
+
+
+                list.click();
+            }
+        }
+       WebElement Next =chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div[2]/button[2]"));
+       WebElement Before =chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div[2]/button[1]"));
+       Next.click();
+       Before.click();
+       WebElement checkall=chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div/div[2]/div/a"));
+       checkall.click();
+       Next.click();
+
+    }
+    @Test
+    public  void DragandDropDemoforAutomation() {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/drag-and-drop-demo.html");
+        WebElement Drag1 = chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div[2]/div[1]/span[1]"));
+
+        WebElement Dragto= chrome.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div"));
+        (new Actions(chrome)).dragAndDrop(Drag1,Dragto).perform();
+    }
+    @Test
+    public  void LoadingthedataDynamically() throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        chrome.get("https://demo.seleniumeasy.com/dynamic-data-loading-demo.html");
+        chrome.findElement(By.id("save")).click();
+        Thread.sleep(5000);
+        WebElement FirstName=chrome.findElement(By.id("loading"));
+
+        System.out.println( FirstName.getText());
+
+    }
+
+    }
+
