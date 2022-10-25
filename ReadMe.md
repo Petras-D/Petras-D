@@ -23,12 +23,6 @@ Hello. My name is Piotr Duda and I am a software tester who is taking may first 
 - JAVA(fundamentals)
 
 
-## I want to learn
-- POSTMAN
-- SELENIUM
-- JENKIS
-- CUCUMBER
-
 
 ## Tech skills in basics:
 - Software testing
